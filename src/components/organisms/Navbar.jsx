@@ -23,7 +23,7 @@ export default function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center justify-center pr-2 gap-4 sm:ml-6 sm:pr-0">
             <Link className="pr-3 text-5xl" to="/">
-              CineFlix
+              CineFlixz
             </Link>
             <SwitchButton className="pr-3 items-center" />
           </div>
