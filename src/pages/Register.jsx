@@ -7,14 +7,14 @@ import { AuthPage } from "../context/AuthContext";
 const Register = () => {
   const [email, setEmail] = useState("")
   const [lastName, setLastName] = useState("")
-  const [firtsName, setFirstName] = useState("")
+  const [firstName, setFirstName] = useState("")
   const [password, setPassword] = useState()
 
   const {createUser}= useContext(AuthPage)
 
   const handleSubmit=(e)=>{
-    e.preventDefault
-    const displayName=`${firtsName} ${lastName}}`
+    e.preventDefault()
+    const displayName=`${firstName} ${lastName}}`
     createUser(email, password, displayName)
 
   }
