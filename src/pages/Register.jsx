@@ -8,13 +8,13 @@ const Register = () => {
   const [email, setEmail] = useState("")
   const [lastName, setLastName] = useState("")
   const [firstName, setFirstName] = useState("")
-  const [password, setPassword] = useState()
+  const [password, setPassword] = useState("")
 
-  const {createUser}= useContext(AuthPage)
+  const {createUser,googleWith }= useContext(AuthPage)
 
   const handleSubmit=(e)=>{
     e.preventDefault()
-    const displayName=`${firstName} ${lastName}}`
+    const displayName=`${firstName} ${lastName}`
     createUser(email, password, displayName)
 
   }
@@ -47,6 +47,7 @@ const Register = () => {
               placeholder=" "
               name="floating_text"
               type="text"
+              id="floating_lastname"
               required
               onChange={(e)=>setLastName(e.target.value)}
 
@@ -86,7 +87,7 @@ const Register = () => {
           <button
             type="button"
             className="btn-danger flex justify-between"
-          
+          onClick={googleWith}
           >
             Continue with Google
             <GoogleIcon color="currentColor" />

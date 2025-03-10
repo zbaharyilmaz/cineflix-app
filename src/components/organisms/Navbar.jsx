@@ -8,12 +8,16 @@ import {
 import { Link } from "react-router-dom";
 import SwitchButton from "../atoms/SwitchButton";
 import { Avatar } from "@mui/material";
+import { AuthPage } from "../../context/AuthContext";
+import { useContext } from "react";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 export default function Navbar() {
+  const { logout } = useContext(AuthPage);
+
   return (
     <Disclosure
       as="nav"
@@ -28,7 +32,7 @@ export default function Navbar() {
             <SwitchButton className="pr-3 items-center" />
           </div>
           <div className="absolute inset-y-0 left-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pl-0">
-            <h5 className="text-xl">Bahar Yılmaz</h5>
+            <h5 className="text-xl">{}</h5>
             <Menu as="div" className="relative ml-3">
               <div>
                 <MenuButton className="relative flex rounded-full bg-color7-light text-sm focus:outline-none">
@@ -46,24 +50,23 @@ export default function Navbar() {
                     to="/Register"
                     className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:outline-none"
                   >
-                   Register
+                    Register
                   </Link>
                 </MenuItem>
                 <MenuItem>
-                <Link
+                  <Link
                     to="/Login"
                     className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:outline-none"
                   >
-                   Login
+                    Login
                   </Link>
                 </MenuItem>
                 <MenuItem>
-                <Link
-                    to="/Logout"
-                    className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:outline-none"
-                  >
+                  <span
+                    className="block px-4 py-2 text-sm text-gray-700
+                    data-[focus]:bg-gray-100 data-[focus]:outline-none" onClick={logout()} >
                     Logout
-                  </Link>
+                  </span>
                 </MenuItem>
               </MenuItems>
             </Menu>
