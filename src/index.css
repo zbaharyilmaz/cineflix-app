@@ -1,34 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/** element bazında default olarak vermek istediğimiz stilleri base layer'da veriyoruz */
 @layer base {
   input {
-    /** apply methodu ile tailwind classlarını kullanabiliyoruz */
-    @apply block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-red-main appearance-none dark:text-white dark:border-red-main dark:focus:border-red-main focus:outline-none focus:ring-0 focus:border-red-main;
+    @apply block py-2.5 px-0 w-full text-sm text-color5-dark bg-transparent border-0 border-b-2 border-color3-blue appearance-none 
+      dark:text-color7-light dark:border-color5-dark dark:focus:border-color3-blue 
+      focus:outline-none focus:ring-0 focus:border-color1-pink;
   }
+
   label {
-    @apply peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-red-main peer-focus:dark:text-red-main peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6;
+    @apply peer-focus:font-medium absolute text-sm text-color3-blue duration-300 transform -translate-y-6 scale-75 top-3 -z-10 
+      origin-[0] peer-focus:left-0 peer-focus:text-color1-pink peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
+      peer-focus:scale-75 peer-focus:-translate-y-6;
   }
 }
 
-/** component/class bazında default olarak vermek istediğimiz stilleri components layer'da veriyoruz */
 @layer components {
-  .btn-danger {
-    @apply focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-lg px-5 py-2.5 mr-2 mb-2 w-[300px] mt-[15px] dark:bg-red-main dark:hover:bg-red-700 dark:focus:ring-red-900;
+  .btn {
+    @apply focus:outline-none text-color7-light bg-color5-dark hover:bg-color9-rose 
+      focus:ring-4 focus:ring-color3-blue font-medium rounded-lg text-lg px-5 py-2.5 
+      mr-2 mb-2 w-[300px] mt-[15px];
   }
-  .btn-danger-bordered {
-    @apply text-red-main hover:text-white border-2 border-red-main hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-red-main dark:text-red-main dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900;
-  }
+
   .form-container {
-    @apply mt-[10vh] mx-auto overflow-hidden relative rounded-[8px] bg-gray-100 dark:bg-[#1c1c1c] before:content-[""] before:absolute before:w-[380px] before:h-[420px] before:top-[-50%] before:left-[-50%] after:content-[""] after:absolute after:w-[380px] after:h-[420px] after:top-[-50%] after:left-[-50%];
+    @apply mt-[10vh] mx-auto overflow-hidden relative rounded-[8px] bg-color4-grey/30 
+      dark:bg-color5-dark before:content-[""] before:absolute before:w-[380px] before:h-[420px] 
+      before:top-[-50%] before:left-[-50%] after:content-[""] after:absolute after:w-[380px] 
+      after:h-[420px] after:top-[-50%] after:left-[-50%];
   }
+
   .form-container form {
-    @apply absolute inset-[2px] rounded-[8px] bg-gray-100 dark:bg-gray-dark-second z-[10] flex flex-col py-[50px] px-[40px];
+    @apply absolute inset-[2px] rounded-[8px] bg-color4-grey/50 dark:bg-color7-light z-[10] 
+      flex flex-col py-[50px] px-[40px];
   }
 }
+
 * {
   box-sizing: border-box;
 }

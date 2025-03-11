@@ -4,17 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        "color1-pink": "#D959C3",
-        "color2-lightblue": "#491BF2",
-        "color3-blue": "#165FF2",
-        "color4-lightpurple": "#E1D0F2",
-        "color5-dark": "#0D0D0D",
-        "color6-lightgrey": "#BFBFBF",
-        "color7-light": "#F2F2F2",
-        "gray-dark-main": "#23242a",
-        "gray-dark-second": "#28292d",
-        "gray-light": "#d3dce6",
-        "red-main": "#ff4b45",
+           "color1-pink": "#D959C3",
+           "color2-lightblue": "#1c3de4",
+           "color3-blue": "#3C4E73",
+           "color4-grey": "#C1C9D9",
+           "color5-dark": "#0D0D0D",
+           "color6-lightgrey": "#BFBFBF",
+           "color7-light": "#fffefe",
+           "color8-grey":"#3C4E70",
+           "color9-rose":"#A66A9C"
+
       },
       fontFamily: {
         font: [],

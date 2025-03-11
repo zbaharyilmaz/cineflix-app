@@ -20,9 +20,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
-// const tmdbApiKey = import.meta.env.VITE_TMDB_KEY;
-// console.log("TMDB API Key:", tmdbApiKey);
-
+export const tmdbApiKey = import.meta.env.VITE_TMDB_KEY;
 
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_API_KEY,

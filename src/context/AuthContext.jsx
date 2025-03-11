@@ -1,6 +1,7 @@
 import { createContext } from "react";
 import {
   createUserWithEmailAndPassword,
+  onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
@@ -9,11 +10,18 @@ import { auth } from "../auth/firebase";
 import { toastError, toastSuccess } from "../helpers/Toastify";
 import { useNavigate } from "react-router-dom";
 import { GoogleAuthProvider } from "firebase/auth";
-import { toast } from "react-toastify";
+import { useState } from "react";
+import { useEffect } from "react";
 
 export const AuthPage = createContext();
 
 const AuthContext = ({ children }) => {
+  const [user, setUser] = useState(true);
+
+  useEffect(() => {
+    userTrack();
+  }, []);
+
   const navigate = useNavigate();
 
   const createUser = async (email, password, displayName) => {
@@ -21,6 +29,9 @@ const AuthContext = ({ children }) => {
       await createUserWithEmailAndPassword(auth, email, password);
       toastSuccess("Register is successfully done");
       navigate("/");
+      await updateProfile(auth.user, {
+        displayName: displayName,
+      });
     } catch (error) {
       toastError("Registration failed!");
     }
@@ -34,26 +45,45 @@ const AuthContext = ({ children }) => {
       toastError("Login failed!");
     }
   };
-  const googleWith = async () => {
-    try {
-      const provider = new GoogleAuthProvider();
-      const result = await signInWithPopup(auth, provider);
-      toastSuccess(`Welcome! You have signed in with Google.`);
-      navigate("/");
-    } catch (error) {
-      toastError("Register with Google failed!");
-      console.error("Google Login Error:", error);
-    }
-  };
-  
+  const googleWith = () => {
+    const provider = new GoogleAuthProvider();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        toastSuccess("Login with Google is successfully done.");
 
-  const logout = async () => {
+        navigate("/");
+      })
+      .catch((error) => {
+        toastError("Login with Google is failed!");
+      });
+  };
+
+  const logout = () => {
     signOut(auth);
     toastSuccess("Logout is successfully done.");
+    navigate("/login");
+  };
+
+  const userTrack = () => {
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const { email, displayName, photoURL } = user;
+
+        setUser({
+          email: email,
+          displayName: displayName,
+          photoURL: photoURL,
+        });
+      } else {
+        setUser(false);
+      }
+    });
   };
 
   return (
-    <AuthPage.Provider value={{ createUser, loginUser, googleWith, logout }}>
+    <AuthPage.Provider
+      value={{ createUser, loginUser, googleWith, logout, userTrack }}
+    >
       {children}
     </AuthPage.Provider>
   );
