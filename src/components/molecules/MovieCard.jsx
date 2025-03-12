@@ -1,30 +1,28 @@
-
-const MovieCard = () => {
-    console.log();
+const MovieCard = ({ poster_path, title, vote_average, overview }) => {
   return (
-    <div class="flex flex-col bg-white shadow-sm border border-slate-200 rounded-lg my-6 w-96">
-    <div class="m-2.5 overflow-hidden rounded-md h-80 flex justify-center items-center">
-      <img class="w-full h-full object-cover" src=".." alt="profile-picture" />
+    <div className="movie shadow-lg rounded-lg overflow-hidden w-full" id="container">
+
+      <img
+        loading="lazy"
+        src={`https://image.tmdb.org/t/p/w500${poster_path}`}
+        alt=""
+        className=" w-full h-80 object-fit"
+      />
+
+      <div className="flex align-baseline justify-between p-1 text-color6-lightgrey">
+        <h3 className="text-xl p-2"> {title}</h3>
+        <span className="p-2">
+          {vote_average.toFixed(2)}
+        </span>
+      </div>
+
+      <div className="movie-over">
+        <h2 className="text-color2-lightblue text-lg">Overview</h2>
+        <p>{overview}</p>
+      </div>
     </div>
-    <div class="p-6 text-center">
-      <h4 class="mb-1 text-xl font-semibold text-slate-800">
-        Natalie Paisley
-      </h4>
-      <p
-        class="text-sm font-semibold text-slate-500 uppercase">
-        Product Manager 
-      </p>
-      <p class="text-base text-slate-600 mt-4 font-light ">
-          The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to Naviglio where you can enjoy the main night life in Barcelona.
-      </p>
-    </div>
-    <div class="flex justify-center p-6 pt-2 gap-7">
-      <button class="min-w-32  rounded-md bg-slate-800 py-2 px-4 border border-transparent text-center text-sm text-white transition-all shadow-md hover:shadow-lg focus:bg-slate-700 focus:shadow-none active:bg-slate-700 hover:bg-slate-700 active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none" type="button">
-        Follow
-      </button>
-    </div>
-  </div>
   );
 };
 
 export default MovieCard;
+
