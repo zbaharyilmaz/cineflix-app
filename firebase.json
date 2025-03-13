@@ -1,0 +1,12 @@
+{
+  "hosting": {
+    "public": "dist", 
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+    "site": "cineflix-app-9c103" 
+  }
+}

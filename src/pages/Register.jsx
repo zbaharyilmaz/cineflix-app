@@ -3,6 +3,7 @@ import GoogleIcon from "@mui/icons-material/Google";
 import { useState } from "react";
 import { useContext } from "react";
 import { AuthPage } from "../context/AuthContext";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -19,18 +20,17 @@ const Register = () => {
   };
 
   return (
-    <div className="overflow-hidden flex flex-col flex-1 h-screen justify-center items-center bg-color7-light dark:bg-color5-dark">
-      <div className="form-container mt-[5vh] w-[400px] h-[550px]">
+    <div className="overflow-hidden flex flex-col flex-1 h-screen justify-items-start items-center bg-color7-light dark:bg-color5-dark">
+      <div className="form-container w-[400px] h-[550px]">
         <form onSubmit={handleSubmit}>
-          <h2 className="text-color4-dark text-2xl font-[500] text-center tracking-[0.1em] mb-3">
+          <h2 className="text-color4-dark text-3xl font-[500] text-center tracking-[0.1em] mb-3">
             REGISTER
           </h2>
           <div className="relative z-0 w-full mb-5 group">
             <input
               type="text"
-              name="floating_text"
               id="floating_text"
-              className=" peer"
+              className="peer"
               placeholder=" "
               required
               onChange={(e) => setFirstName(e.target.value)}
@@ -43,7 +43,6 @@ const Register = () => {
             <input
               className="peer"
               placeholder=" "
-              name="floating_text"
               type="text"
               id="floating_lastname"
               required
@@ -55,7 +54,6 @@ const Register = () => {
             <input
               className="peer"
               placeholder=" "
-              name="floating_email"
               type="email"
               required
               onChange={(e) => setEmail(e.target.value)}
@@ -86,6 +84,9 @@ const Register = () => {
           </button>
         </form>
       </div>
+      <Link 
+        className="m-4 text-color2-lightblue text-xl"
+        to="/login">Do you have an account? Login</Link>
     </div>
   );
 };

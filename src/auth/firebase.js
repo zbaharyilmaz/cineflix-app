@@ -1,22 +1,3 @@
-// import { initializeApp } from "firebase/app"
-// import { getAuth } from "firebase/auth"
-
-// const firebaseConfig={
-//     apiKey: process.env.REACT_APP_apiKey,
-//     authDomain: process.env.REACT_APP_authDomain,
-//     projectId: process.env.REACT_APP_projectId,
-//     storageBucket: process.env.REACT_APP_storageBucket,
-//     messagingSenderId: process.env.REACT_APP_messagingSenderId,
-//     appId: process.env.REACT_APP_appId,
-// }
-
-// const app= initializeApp(firebaseConfig)
-
-// export const auth= getAuth(app)
-
-//! Using process.env in Vite: Vite uses import.meta.env, not process.env.
-
-
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
@@ -30,7 +11,7 @@ const firebaseConfig = {
   messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
   appId: import.meta.env.VITE_APP_ID,
 };
+console.log(firebaseConfig);  // Firebase yapılandırmasını kontrol et
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-

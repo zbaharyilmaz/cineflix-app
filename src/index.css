@@ -5,18 +5,12 @@
 
 @layer base {
   input {
-    @apply block py-2.5 px-0 w-full text-sm text-color5-dark bg-transparent border-0 border-b-2 border-color3-blue appearance-none 
-      dark:text-color7-light dark:border-color5-dark dark:focus:border-color3-blue 
-      focus:outline-none focus:ring-0 focus:border-color1-pink;
+    @apply  block py-2.5 px-0 w-full text-base bg-transparent border-0 border-b-2 border-color3-blue appearance-none dark:text-color5-dark dark:border-color3-blue dark:focus:border-color2-lightblue focus:outline-none focus:ring-0 focus:border-color3-blue;
   }
-
   label {
-    @apply peer-focus:font-medium absolute text-sm text-color3-blue duration-300 transform -translate-y-6 scale-75 top-3 -z-10 
-      origin-[0] peer-focus:left-0 peer-focus:text-color1-pink peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
-      peer-focus:scale-75 peer-focus:-translate-y-6;
+    @apply peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-color2-lightblue peer-focus:dark:text-color2-lightblue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6;
   }
 }
-
 @layer components {
   .btn {
     @apply focus:outline-none text-color7-light bg-color5-dark hover:bg-color9-rose 
@@ -40,6 +34,7 @@
 * {
   box-sizing: border-box;
 }
+
 
 body {
   font-family: "Permanent Marker", cursive;

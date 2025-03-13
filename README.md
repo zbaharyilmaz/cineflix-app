@@ -16,9 +16,6 @@ Project aims to create a movie app.
 
 ## Steps to Solution
 
-- Before start you can watch these tutorials:
-  - https://www.youtube.com/watch?v=9bXhf_TELP4
-  - https://www.youtube.com/watch?v=vDT7EnUpEoo
 - Step 1 : Create React App using `npx create-react-app movie-app` and install firebase `npm i firebase` / `yarn add firebase`
 
 - Step 2 : Signup `https://firebase.google.com/` and create new app in firebase.
@@ -151,13 +148,7 @@ sendPasswordResetEmail(auth, email)
 - You can add additional functionalities to your app.
 
 ## Demo
+
 <a href="https://firebase-movie-app-tailwind.vercel.app/" target="_blank">Movie App</a>
 
 **<p align="center">&#9786; Happy Coding &#9997;</p>**
-
-
-
-
-
-
-env dekileri firebase e kopyaladım.Github a pushlanmasın diye devreye env girdi. syntax şu: process.env......

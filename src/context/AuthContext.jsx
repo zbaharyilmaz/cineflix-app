@@ -5,6 +5,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../auth/firebase";
 import { toastError, toastSuccess } from "../helpers/Toastify";
@@ -16,7 +17,7 @@ import { useEffect } from "react";
 export const AuthPage = createContext();
 
 const AuthContext = ({ children }) => {
-  const [user, setUser] = useState(true);
+  const [currentUser, setCurrentUser] = useState();
 
   useEffect(() => {
     userTrack();
@@ -29,7 +30,7 @@ const AuthContext = ({ children }) => {
       await createUserWithEmailAndPassword(auth, email, password);
       toastSuccess("Register is successfully done");
       navigate("/");
-      await updateProfile(auth.user, {
+      await updateProfile(auth.currentUser, {
         displayName: displayName,
       });
     } catch (error) {
@@ -65,24 +66,31 @@ const AuthContext = ({ children }) => {
   };
 
   const userTrack = () => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        const { email, displayName, photoURL } = user;
+    onAuthStateChanged(auth, (currentUser) => {
+      if (currentUser) {
+        const { email, displayName, photoURL } = currentUser;
 
-        setUser({
+        setCurrentUser({
           email: email,
           displayName: displayName,
           photoURL: photoURL,
         });
       } else {
-        setUser(false);
+        setCurrentUser(false);
       }
     });
   };
 
   return (
     <AuthPage.Provider
-      value={{ createUser, loginUser, googleWith, logout, userTrack }}
+      value={{
+        currentUser,
+        createUser,
+        loginUser,
+        googleWith,
+        logout,
+        userTrack,
+      }}
     >
       {children}
     </AuthPage.Provider>
