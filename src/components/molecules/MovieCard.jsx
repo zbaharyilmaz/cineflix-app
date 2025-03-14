@@ -26,8 +26,8 @@ const MovieCard = ({ poster_path, title, vote_average, overview,id }) => {
         className=" w-full h-80 object-cover"
       />
 
-      <div className="flex align-baseline justify-between p-1 text-color6-lightgrey">
-        <h3 className="text-xl p-2"> {title}</h3>
+      <div className="flex flex-wrap md:flex-nowrap align-baseline justify-between p-2 text-color6-lightgrey md:text-xl sm:text-lg">
+        <h3> {title}</h3>
         {currentUser && (
           <span className={`tag ${vote_average > 7 ? "green" : "red"}`}>
             {vote_average.toFixed(2)}
@@ -35,7 +35,7 @@ const MovieCard = ({ poster_path, title, vote_average, overview,id }) => {
         )}
       </div>
 
-      <div className="movie-over">
+      <div className="movie-over custom-scrollbar">
         <h2 className="text-color2-lightblue text-lg">Overview</h2>
         <p>{overview}</p>
       </div>

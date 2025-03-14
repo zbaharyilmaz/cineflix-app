@@ -4,11 +4,11 @@
 @tailwind utilities;
 
 @layer base {
-  input {
-    @apply  block py-2.5 px-0 w-full text-base bg-transparent border-0 border-b-2 border-color3-blue appearance-none dark:text-color5-dark dark:border-color3-blue dark:focus:border-color2-lightblue focus:outline-none focus:ring-0 focus:border-color3-blue;
+  input.peer {
+    @apply block py-2.5 px-0 w-full text-base bg-transparent border-0 border-b-2 border-color3-blue appearance-none dark:border-color3-blue dark:focus:border-color2-lightblue focus:outline-none focus:ring-0 focus:border-color3-blue text-color5-dark;
   }
   label {
-    @apply peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-color2-lightblue peer-focus:dark:text-color2-lightblue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6;
+    @apply peer-focus:font-medium absolute text-sm  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-color2-lightblue peer-focus:dark:text-color2-lightblue peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6;
   }
 }
 @layer components {
@@ -35,10 +35,17 @@
   box-sizing: border-box;
 }
 
-
 body {
   font-family: "Permanent Marker", cursive;
   margin: 0;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.custom-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 .movie {
   background-color: #080f36;
@@ -81,22 +88,22 @@ body {
 
 .tag {
   border-radius: 5px;
-  padding: 0.7rem;
+  padding: 0.5rem;
   font-weight: bold;
-  width: 3rem;
+  width: 4rem;
   text-align: center;
+  display: inline-block;
+  line-height: 1.5rem;
+  height: 2.5rem;
 }
 
 .tag.green {
   background-color: #1b5e20;
+  line-height: 1.5rem;
 }
-
-.tag.orange {
-  background-color: #f57f17;
-}
-
 .tag.red {
   background-color: #7f0000;
+  line-height: 1.5rem;
 }
 
 .form-image {

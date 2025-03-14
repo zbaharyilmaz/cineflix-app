@@ -14,7 +14,6 @@ const MovieDetails = () => {
       .get(`${BASE_URL}movie/${id}?api_key=${tmdbApiKey}`)
       .then((res) => setDetails(res.data));
   }, [id]);
-  console.log(details);
 
   return (
     <div className="min-h-screen bg-color7-light dark:bg-color5-dark">
@@ -22,7 +21,7 @@ const MovieDetails = () => {
       <div className="md:container flex justify-center px-10">
         <div className="flex flex-col lg:flex-row max-w-6xl rounded-lg bg-gray-100 shadow-lg">
           <img
-            className=" lg:w-1/3 h-96 lg:h-[600px] object-cover rounded-t-lg md:rounded-none md:rounded-l-lg"
+           className="w-full h-auto sm:w-1/3 :h-[450px] object-cover rounded-t-lg md:rounded-none md:rounded-l-lg"
             src={`https://image.tmdb.org/t/p/w500${details.poster_path}`}
             alt="poster"
           />

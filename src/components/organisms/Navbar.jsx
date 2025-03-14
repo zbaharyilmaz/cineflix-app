@@ -23,10 +23,10 @@ export default function Navbar() {
       as="nav"
       className="bg-color7-light text-color2-lightblue dark:bg-color5-dark dark:text-color1-pink h-20"
     >
-      <div className="px-2 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+      <div className="px-2 sm:px-6 lg:px-8 overflow-x-auto sm:w-full md:w-auto custom-scrollbar">
+        <div className="flex h-16 items-center justify-between ">
           <div className="flex items-center justify-center pr-2 gap-4 sm:ml-6 sm:pr-0">
-            <Link className="pr-3 text-6xl mt-4" to="/">
+          <Link className="pr-3 mt-4 text-3xl sm:text-3xl md:text-5xl lg:text-6xl" to="/">
               Cine
               <span className="text-color1-pink dark:text-color2-lightblue">
                 F
@@ -36,9 +36,9 @@ export default function Navbar() {
           </div>
           {currentUser ? (
             
-            <div className="absolute inset-y-0 left-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pl-0">
+            <div className="absolute inset-y-0 left-0 items-center pr-2 sm:static sm:inset-auto flex gap-2 ">
                <SwitchButton/>
-              <h5 className="text-xl text-color8-grey dark:text-color9-rose mt-8 m-1">
+              <h5 className=" text-color8-grey dark:text-color9-rose  mt-8 m-1 text-sm sm:text-sm md:text-xl">
                 {currentUser?.displayName}
               </h5>
               <Menu as="div" className="relative ml-3">
@@ -65,7 +65,7 @@ export default function Navbar() {
               </Menu>
             </div>
           ) : (
-            <div className="flex gap-4">
+            <div className="flex gap-2 overflow-x-auto sm:w-full md:w-auto custom-scrollbar">
               <SwitchButton/>
               <Link
                 to="/Register"
