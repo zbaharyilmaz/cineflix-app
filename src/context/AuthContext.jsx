@@ -62,7 +62,7 @@ const AuthContext = ({ children }) => {
   const logout = () => {
     signOut(auth);
     toastSuccess("Logout is successfully done.");
-    navigate("/login");
+    navigate("/");
   };
 
   const userTrack = () => {

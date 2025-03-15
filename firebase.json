@@ -7,6 +7,17 @@
         "destination": "/index.html"
       }
     ],
-    "site": "cineflix-app-9c103" 
+    "site": "cineflix-app-9c103",
+    "headers": [
+      {
+        "source": "/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache, no-store, must-revalidate"
+          }
+        ]
+      }
+    ]
   }
 }
