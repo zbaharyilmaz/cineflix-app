@@ -14,7 +14,6 @@ const Login = () => {
   };
 
   return (
-
     <div className="overflow-hidden flex flex-col flex-1 h-screen justify-items-start items-center bg-color7-light dark:bg-color5-dark">
       <div className="form-container w-[400px] h-[550px]">
         <form onSubmit={handleSubmit}>
@@ -24,11 +23,11 @@ const Login = () => {
 
           <div className="relative z-0 w-full mb-5 group">
             <input
-          class=" peer"
-          placeholder=" "
-          name="floating_email"
-          type="email"
-          required
+              class=" peer"
+              placeholder=" "
+              name="floating_email"
+              type="email"
+              required
               onChange={(e) => setEmail(e.target.value)}
             />
             <label htmlFor="floating_email">Email</label>
@@ -60,9 +59,9 @@ const Login = () => {
           </div>
         </form>
       </div>
-      <Link 
-        className="m-4 text-color2-lightblue text-xl"
-        to="/register">New here? Create an account!</Link>
+      <Link className="m-4 text-color2-lightblue text-xl" to="/register">
+        New here? Create an account!
+      </Link>
     </div>
   );
 };

@@ -17,38 +17,36 @@ const MovieDetails = () => {
 
   return (
     <div className="min-h-screen bg-color7-light dark:bg-color5-dark">
-    <div className="md:container px-10 mx-auto py-5 ">
-      <div className="md:container flex justify-center px-10">
-        <div className="flex flex-col lg:flex-row max-w-6xl rounded-lg bg-gray-100 shadow-lg">
-          <img
-           className="w-full h-auto sm:w-1/3 :h-[450px] object-cover rounded-t-lg md:rounded-none md:rounded-l-lg"
-            src={`https://image.tmdb.org/t/p/w500${details.poster_path}`}
-            alt="poster"
-          />
-          <div className="p-6 flex flex-col justify-around">
-            <div>
-              <h1 className="text-center text-color2-lightblue text-2xl m-3">
-                {details.title}
-              </h1>
-              <h5 className="text-gray-900 text-xl font-medium mb-2 text-center">
-                {details.tagline}
-              </h5>
-              <p className="text-gray-700 text-base mt-4">{details.overview}</p>
-            </div>
-            <ul className="bg-gray-100 rounded-lg border border-gray-400 text-gray-900">
-              <li className="px-1 py-2 border-b border-gray-400 w-full rounded-t-lg">
-                {"Release Date : " + details.release_date}
+      <div className="max-w-screen-xl mx-auto px-4 py-8">
+        <div className="flex flex-col lg:flex-row justify-center items-center gap-8 mt-12">
+          <div className="flex flex-col items-start lg:text-left">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl text-color8-grey my-6">
+              {details.title}
+            </h1>
+            <h5 className="text-lg sm:text-xl text-gray-800 mb-4 italic text-center">
+              {details.tagline}
+            </h5>
+            <p className="text-base sm:text-lg text-gray-700 mb-6">
+              {details.overview}
+            </p>
+
+            <ul className="bg-gray-100 rounded-lg border border-gray-400 text-gray-900 w-full">
+              <li className="px-4 py-2 border-b border-gray-400">
+                <strong>Release Date: </strong>
+                {details.release_date}
               </li>
-              <li className="px-1 py-2 border-b border-gray-400 w-full">
-                {"Rate : " + details.vote_average}
+              <li className="px-4 py-2 border-b border-gray-400">
+                <strong>Rate: </strong>
+                {details.vote_average}
               </li>
-              <li className="px-1 py-2 border-b border-gray-400 w-full">
-                {"Total Vote : " + details.vote_count}
+              <li className="px-4 py-2 border-b border-gray-400">
+                <strong>Total Votes: </strong>
+                {details.vote_count}
               </li>
-              <li className="px-1 py-2 border-gray-400 w-full rounded-t-lg">
+              <li className="px-4 py-2 rounded-b-lg">
                 <Link
                   to={-1}
-                  className="text-blue-600 hover:text-blue-700 transition duration-300 ease-in-out mb-4"
+                  className="text-blue-600 hover:text-blue-700 transition duration-300 ease-in-out"
                 >
                   Go Back
                 </Link>
@@ -57,7 +55,6 @@ const MovieDetails = () => {
           </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };

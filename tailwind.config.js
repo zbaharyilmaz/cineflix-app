@@ -14,9 +14,6 @@ export default {
         "color8-grey": "#3C4E70",
         "color9-rose": "#A66A9C",
       },
-      fontFamily: {
-        font: [],
-      },
     },
   },
   darkMode: "selector",

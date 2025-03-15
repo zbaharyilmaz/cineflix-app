@@ -19,30 +19,22 @@
   }
 
   .form-container {
-    @apply mt-[10vh] mx-auto overflow-hidden relative rounded-[8px] bg-color4-grey/30 
-      dark:bg-color5-dark before:content-[""] before:absolute before:w-[380px] before:h-[420px] 
-      before:top-[-50%] before:left-[-50%] after:content-[""] after:absolute after:w-[380px] 
-      after:h-[420px] after:top-[-50%] after:left-[-50%];
+    @apply mt-[10vh] mx-auto overflow-hidden relative rounded-[8px] bg-color4-grey/30 dark:bg-color5-dark;
+    position: relative;
   }
-
   .form-container form {
-    @apply absolute inset-[2px] rounded-[8px] bg-color4-grey/50 dark:bg-color7-light z-[10] 
-      flex flex-col py-[50px] px-[40px];
+    @apply absolute inset-[2px] rounded-[8px] bg-color4-grey/50 dark:bg-color7-light z-[10] flex flex-col py-[50px] px-[40px];
   }
 }
-
-* {
-  box-sizing: border-box;
-}
-
 body {
   font-family: "Permanent Marker", cursive;
-  margin: 0;
 }
 .custom-scrollbar::-webkit-scrollbar {
   display: none;
 }
-
+input {
+  color: grey !important;
+}
 .custom-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -105,34 +97,6 @@ body {
   background-color: #7f0000;
   line-height: 1.5rem;
 }
-
-.form-image {
-  min-width: 800px;
-  min-height: 600px;
-}
-
-.custom-linear-gradient::before {
-  background: linear-gradient(0deg, transparent, #ff4b45);
-  transform-origin: bottom right;
-  animation: animate 6s linear infinite;
-}
-
-.custom-linear-gradient::after {
-  background: linear-gradient(0deg, transparent, #ff4b45);
-  transform-origin: bottom right;
-  animation: animate 6s linear infinite;
-  animation-delay: -3s;
-}
-
-@keyframes animate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus input:-webkit-autofill {

@@ -22,7 +22,10 @@ const Register = () => {
   return (
     <div className="overflow-hidden flex flex-col flex-1 h-screen justify-items-start items-center bg-color7-light dark:bg-color5-dark">
       <div className="form-container w-[400px] h-[550px]">
-        <form className="overflow-hidden sm:overflow-auto h-full sm:h-auto custom-scrollbar" onSubmit={handleSubmit}>
+        <form
+          className="overflow-hidden sm:overflow-auto h-full sm:h-auto custom-scrollbar"
+          onSubmit={handleSubmit}
+        >
           <h2 className="text-color4-dark text-3xl font-[500] text-center tracking-[0.1em] mb-3">
             REGISTER
           </h2>
@@ -84,9 +87,9 @@ const Register = () => {
           </button>
         </form>
       </div>
-      <Link 
-        className="m-4 text-color2-lightblue text-xl"
-        to="/login">Do you have an account? Login</Link>
+      <Link className="m-4 text-color2-lightblue text-xl" to="/login">
+        Do you have an account? Login
+      </Link>
     </div>
   );
 };

@@ -2,17 +2,16 @@ import { useContext } from "react";
 import { AuthPage } from "../../context/AuthContext.jsx";
 import { useNavigate } from "react-router-dom";
 
-const MovieCard = ({ poster_path, title, vote_average, overview,id }) => {
+const MovieCard = ({ poster_path, title, vote_average, overview, id }) => {
   const { currentUser } = useContext(AuthPage);
-  const navigate=useNavigate()
-  const handleClick=()=>{
-    if(currentUser){
-      navigate("/details/"+id)
+  const navigate = useNavigate();
+  const handleClick = () => {
+    if (currentUser) {
+      navigate("/details/" + id);
+    } else {
+      navigate("/login");
     }
-    else{
-      navigate("/login")
-    }
-  }
+  };
   return (
     <div
       className="movie shadow-lg rounded-lg overflow-hidden w-full"

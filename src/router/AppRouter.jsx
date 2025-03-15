@@ -6,17 +6,16 @@ import Home from "../pages/Home";
 import PrivateRouter from "./PrivateRouter";
 import MovieDetails from "../pages/MovieDetails";
 
-
 const AppRouter = () => {
   return (
     <>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home/>} />
+        <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/details/:id" element={<PrivateRouter/>}>
-        <Route path="" element={<MovieDetails/>}/>
+        <Route path="/details/:id" element={<PrivateRouter />}>
+          <Route path="" element={<MovieDetails />} />
         </Route>
       </Routes>
     </>
