@@ -114,14 +114,14 @@ export default function Navbar() {
                     {!isLoginOrRegisterPage && (
                     <>
                   <Link
-                    to="/Register"
+                    to="/register"
                     className="mt-8 px-4 w-10/12 py-2 text-sm bg-color9-rose text-white rounded-md hover:bg-color8-grey"
                     onClick={handleLink}
                   >
                     Register
                   </Link>
                   <Link
-                    to="/Login"
+                    to="/login"
                     className="mt-8 px-4 py-2 text-sm bg-color2-lightblue text-white rounded-md hover:bg-color8-grey"
                     onClick={handleLink}
                   >
@@ -154,14 +154,14 @@ export default function Navbar() {
       ) : (
         <div className="flex flex-col gap-2 p-4">
           <Link
-            to="/Register"
+            to="/register"
             className="px-1 py-2 text-sm bg-color9-rose text-white rounded-md hover:bg-color8-grey"
             onClick={handleLink}
           >
             Register
           </Link>
           <Link
-            to="/Login"
+            to="/login"
             className="px-4 py-2 text-sm bg-color2-lightblue text-white rounded-md hover:bg-color8-grey"
             onClick={handleLink}
           >
