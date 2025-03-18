@@ -1,2 +1,0 @@
-# CineFlix App
-

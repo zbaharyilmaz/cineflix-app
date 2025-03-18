@@ -1,8 +1,6 @@
 import { useContext } from "react";
 import MovieCard from "../components/molecules/MovieCard";
 import { MoviePage } from "../context/MovieContext";
-import { useState } from "react";
-import Navbar from "../components/organisms/Navbar";
 
 const Home = () => {
   const { movies, setSearch, loading } = useContext(MoviePage);
@@ -23,7 +21,7 @@ const Home = () => {
       >
         <input
           type="text"
-          placeholder="Search movies"
+          placeholder="Find movie"
           className="w-2/4 p-2 border-b-2 border-gray-400 focus:border-blue-400 dark:border-gray-500 dark:focus:border-color7-light bg-transparent outline-none text-black dark:text-color6-lightgrey"
           onChange={(e) => setSearch(e.target.value)}
         />
