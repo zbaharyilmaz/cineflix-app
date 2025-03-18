@@ -22,12 +22,12 @@ const DesktopMenu = () => {
   return (
     <div className="hidden sm:flex items-center gap-2">
       {currentUser ? (
-        <div className="absolute inset-y-0 left-0 items-center pr-2 sm:static sm:inset-auto flex gap-2 ">
-          <h5 className="text-color8-grey dark:text-color6-lightgrey mt-8 m-1 md:text-[1.1rem]">
+        <div className="absolute inset-y-0 left-0 items-center mr-2 sm:static sm:inset-auto flex gap-1 ">
+          <h5 className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-2 rounded-full shadow-sm">
             {currentUser?.displayName}
           </h5>
           <Menu>
-            <div className="mt-7">
+            <div className="mt-2">
               <MenuButton className="relative flex rounded-full  text-sm focus:outline-none">
                 <span className="absolute -inset-1.5" />
                 <span className="sr-only">Open user menu</span>
@@ -39,7 +39,7 @@ const DesktopMenu = () => {
               >
                 <MenuItem>
                   <span
-                    className="block px-4 py-2 text-sm text-color5-dark"
+                    className="block px-4 py-2 text-sm text-color5-dark cursor-alias"
                     onClick={handleLogout}
                   >
                     Logout
