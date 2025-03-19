@@ -42,34 +42,38 @@ Cineflix is your gateway to a vast world of movies! Search, explore, and discove
 ### Project Structure
 
 ```plaintext
-📦src
- ┣ 📂auth
- ┃ ┗ 📜firebase.js
- ┣ 📂components
- ┃ ┣ 📂atoms
- ┃ ┃ ┗ 📜SwitchButton.jsx
- ┃ ┣ 📂molecules
- ┃ ┃ ┣ 📜DesktopMenu.jsx
- ┃ ┃ ┣ 📜MobileMenu.jsx
- ┃ ┃ ┗ 📜MovieCard.jsx
- ┃ ┗ 📂organisms
- ┃ ┃ ┗ 📜Navbar.jsx
- ┣ 📂context
- ┃ ┣ 📜AuthContext.jsx
- ┃ ┗ 📜MovieContext.jsx
- ┣ 📂helpers
- ┃ ┗ 📜Toastify.js
- ┣ 📂pages
- ┃ ┣ 📜Home.jsx
- ┃ ┣ 📜Login.jsx
- ┃ ┣ 📜MovieDetails.jsx
- ┃ ┗ 📜Register.jsx
- ┣ 📂router
- ┃ ┣ 📜AppRouter.jsx
- ┃ ┗ 📜PrivateRouter.jsx
- ┣ 📜App.jsx
- ┣ 📜index.css
- ┗ 📜main.jsx
+src
+     ┣ assets
+ ┃ ┗ clickSound.mp3
+ ┣ auth
+ ┃ ┗ firebase.js
+ ┣ components
+ ┃ ┣ atoms
+ ┃ ┃ ┗ SwitchButton.jsx
+ ┃ ┣ molecules
+ ┃ ┃ ┣ DesktopMenu.jsx
+ ┃ ┃ ┣ MobileMenu.jsx
+ ┃ ┃ ┗ MovieCard.jsx
+ ┃ ┗ organisms
+ ┃ ┃ ┗ Navbar.jsx
+ ┣ context
+ ┃ ┣ AuthContext.jsx
+ ┃ ┗ MovieContext.jsx
+ ┣ helpers
+ ┃ ┗ Toastify.js
+ ┣ pages
+ ┃ ┣ Home.jsx
+ ┃ ┣ Login.jsx
+ ┃ ┣ MovieDetails.jsx
+ ┃ ┣ NotFound.jsx
+ ┃ ┗ Register.jsx
+ ┣ router
+ ┃ ┣ AppRouter.jsx
+ ┃ ┗ PrivateRouter.jsx
+ ┣ App.jsx
+ ┣ _redirects
+ ┣ index.css
+ ┗ main.jsx
  ```
 
 ###  Project Setup
@@ -77,22 +81,21 @@ Cineflix is your gateway to a vast world of movies! Search, explore, and discove
 If you'd like to run this project locally, follow these steps:
 
 1. **Clone the Repository and Navigate to the Project Directory:**
-
    ```bash
-    git clone https://github.com/zbaharyilmaz/cineflix.git
-    cd cineflix
+   git clone https://github.com/zbaharyilmaz/cineflix-app.git
+
+   cd cineflix
 2. **Install Dependencies:**
-
    ```bash
-    pnpm install
+   pnpm install
 3. **Set up Firebase:**
 - Go to Firebase Console, create a new project, and add a web app.
 - Enable Authentication and choose Email/Password.
 - Install Firebase:
   ```bash
-    pnpm add firebase
+  pnpm add firebase
 - Create a .env file with your Firebase and TMDB API keys:
-   ```bash
+    ```bash
     VITE_API_KEY=your_firebase_api_key
     VITE_API_KEY=your_firebase_api_key
     VITE_AUTH_DOMAIN=your_auth_domain
