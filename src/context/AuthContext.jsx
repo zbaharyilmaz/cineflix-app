@@ -1,4 +1,3 @@
-import { createContext } from "react";
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
@@ -11,8 +10,7 @@ import { auth } from "../auth/firebase";
 import { toastError, toastSuccess } from "../helpers/Toastify";
 import { useNavigate } from "react-router-dom";
 import { GoogleAuthProvider } from "firebase/auth";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect, createContext } from "react";
 
 export const AuthPage = createContext();
 

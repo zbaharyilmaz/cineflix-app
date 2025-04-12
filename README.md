@@ -27,7 +27,7 @@ Cineflix is your gateway to a vast world of movies! Search, explore, and discove
 
 - React (with Vite) - Fast and modern frontend.
 
-- Tailwind CSS - For a stylish and responsive design.
+- Tailwind CSS & Material Tailwind - For a stylish and responsive design.
 
 - Firebase - Authentication and data management.
 
